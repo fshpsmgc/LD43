@@ -18,6 +18,7 @@ public class CustomButton : MonoBehaviour {
 	void OnMouseOver(){
 		if(Input.GetMouseButtonDown(0)){
 			OnClick.Invoke();
+			transform.localScale -= new Vector3(.1f, .1f, .1f);
 		}
 	}
 

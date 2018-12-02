@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class BaseEvent {
 	public string Name;
 	public string Description;
-	public Sprite Picture;
 	public string Choice1Text;
 	public string Choice2Text;
 

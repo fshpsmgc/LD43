@@ -1,0 +1,14 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Perfectly Normal Inc",
+"dataUrl": "LD_43_web_b3.data.unityweb",
+"wasmCodeUrl": "LD_43_web_b3.wasm.code.unityweb",
+"wasmFrameworkUrl": "LD_43_web_b3.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "LD_43_web_b3.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"}
+}

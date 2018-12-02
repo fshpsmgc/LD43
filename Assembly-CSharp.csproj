@@ -59,7 +59,14 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CustomButton.cs" />
      <Compile Include="Assets\Scripts\Events\BaseEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_FreezeAttitude_Human.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_FreezeAttitude_Snail.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_FreezeAttitude_Triangle.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_FreezeAttitude_Void.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_MoneyFound.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_MoneyFound_Big.cs" />
      <Compile Include="Assets\Scripts\Events\Event_MoneyToMPT.cs" />
+     <Compile Include="Assets\Scripts\Events\Event_TerroristAttack.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Faction.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GameController.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Place.cs" />

@@ -7,6 +7,8 @@ public class TurnManager : MonoBehaviour {
 	RandomEventsManager Events;
 	GameController GC;
 	PlacesManager placesManager;
+	public int TurnCounter;
+	public Text TurnText;
 	// Use this for initialization
 	void Start () {
 		Events = GetComponent<RandomEventsManager>();
@@ -20,9 +22,17 @@ public class TurnManager : MonoBehaviour {
 	}
 
 	public void Turn(){
+		TurnCounter++;
+		TurnText.text = "Turn: " + TurnCounter;
 		GC.AddMoney(GC.MoneyPerTurn);
-		SetupEvent();
+		if(TurnCounter % 2 == 0){
+			SetupEvent();
+		}
 		placesManager.GeneratePlaces();
+
+		foreach(Faction f in GC.Factions){
+			f.isFrozen = false;
+		}
 	}
 
 	void SetupEvent(){
@@ -37,10 +47,15 @@ public class TurnManager : MonoBehaviour {
 		Events.Choice1.onClick.AddListener(e.Choice1);
 		Events.Choice1.onClick.AddListener(Events.HideCanvas);
 
-		Events.Choice2.onClick.RemoveAllListeners();
-		Events.Choice2.GetComponentInChildren<Text>().text = e.Choice2Text;
-		Events.Choice2.onClick.AddListener(e.Choice2);
-		Events.Choice2.onClick.AddListener(Events.HideCanvas);
+		if(e.Choice2Text == ""){
+			Events.Choice2.gameObject.SetActive(false);
+		}else{
+			Events.Choice2.gameObject.SetActive(true);
+			Events.Choice2.onClick.RemoveAllListeners();
+			Events.Choice2.GetComponentInChildren<Text>().text = e.Choice2Text;
+			Events.Choice2.onClick.AddListener(e.Choice2);
+			Events.Choice2.onClick.AddListener(Events.HideCanvas);
+		}
 
 		Events.EventCanvas.enabled = true;
 	}

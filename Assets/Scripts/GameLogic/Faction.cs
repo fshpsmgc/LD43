@@ -14,10 +14,16 @@ public class Faction{
 	public string Name;
 	public string Description;
 	public Sprite Icon;
-	
+	public bool isFrozen;
+
+	//If player lost return true, else false
 	public bool ChangeAttitude(int i){
-		attitude.Current -= i;
-		if(attitude.Current < 0) return true;
-		else 					 return false;
+		if(!isFrozen){
+			attitude.Current -= i;
+			if(attitude.Current < 0) return true;
+			else 					 return false;
+		}else{
+			return false;
+		}
 	} 
 }

@@ -20,11 +20,22 @@ public class GameController : MonoBehaviour {
 	public Canvas DefeatCanvas;
 
 	void Victory(){
+		DefeatCanvas.gameObject.SetActive(false);
+		DefeatCanvas.enabled = false;
 
+		VictoryCanvas.gameObject.SetActive(true);
+		VictoryCanvas.enabled = true;
+		print("Victory");
 	}
 
 	void Defeat(){
+		DefeatCanvas.gameObject.SetActive(true);
+		DefeatCanvas.enabled = true;
 
+		VictoryCanvas.gameObject.SetActive(false);
+		VictoryCanvas.enabled = false;
+
+		print("Defeat");
 	}
 
 	public void Restart(){
@@ -33,8 +44,9 @@ public class GameController : MonoBehaviour {
 
 	public void AddMoney(float i){
 		PlayerMoney += i;
-		if(PlayerMoney <= 0){
+		if(PlayerMoney < 0){
 			Defeat();
+			print("Money Defeat");
 		}
 	}
 
@@ -61,7 +73,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void ChangeAttitide(int faction, int i){
-		if(!Factions[faction].ChangeAttitude(i)) Defeat();
+		if(Factions[faction].ChangeAttitude(i)) Defeat();
 	}
 
 }

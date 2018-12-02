@@ -12,6 +12,6 @@ public class Action_Extort : MonoBehaviour {
 		gc.ChangeAttitide(OwnerIndex, AttitudeChange);
 		gc.AddMoney(Money);
 
-		GetComponent<Place>().Hide();
+		gc.GetComponent<PlacesManager>().ClearPlaces();
 	}
 }

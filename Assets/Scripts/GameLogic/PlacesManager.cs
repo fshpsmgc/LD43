@@ -34,8 +34,13 @@ public class PlacesManager : MonoBehaviour {
 				PlacesThisTurn.Add(ChosenPlace);
 				ChosenPlace.Show();
 			}
-		}
+		}	
+	}
 
-		
+	public void ClearPlaces(){
+		foreach(Place p in PlacesThisTurn){
+			p.Hide();
+		}
+		PlacesThisTurn.Clear();
 	}
 }

@@ -12,6 +12,6 @@ public class Action_Kidnap : MonoBehaviour {
 		gc.ChangeAttitide(OwnerIndex, AttitudeChange);
 		gc.AddSouls(Souls);
 
-		GetComponent<Place>().Hide();
+		gc.GetComponent<PlacesManager>().ClearPlaces();
 	}
 }

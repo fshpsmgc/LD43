@@ -9,7 +9,7 @@ public class Event_MoneyToMPT : BaseEvent {
 
 	public Event_MoneyToMPT(){
 		Name = "Investment Opportunity";
-		Description = "Description";
+		Description = "As you enter your office, an assistant tells you about a new startup you can aquire. As you she sees you being confused at the proposition, she reminds you, that you're supposed to keep up the appearance of a proper buisness";
 		//Picture = ;
 		Choice1Text = "Accept (+" + MPT + " Money per Turn; -" + Money + " Money)";
 		Choice2Text = "Refuse";
